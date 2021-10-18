@@ -4,27 +4,27 @@ class Parent
 {
 	public Parent()
 	{
-		System.out.println("Non paramet Parent constructor");
+		System.out.println("Non paramet Parent Constructor");
 	}
 	public Parent(int x)
 	{
-		System.out.println("paramet Parent constructor x = "+x);
+		System.out.println("paramet Parent Constructor x = "+x);
 	}
 }
 class Child extends Parent
 {
 	public Child()
 	{
-		System.out.println("Non paramt Child constructor");	
+		System.out.println("Non paramt Child Constructor");	
 	}
 	public Child(int y)
 	{
-		System.out.println("Paramt Child constructor y = "+y);	
+		System.out.println("Paramt Child Constructor y = "+y);	
 	}
 	public Child(int x,int y) //**********************
 	{
 		super(y);            //***********************
-		System.out.println(" 2 Paramt Child constructor "+ x);
+		System.out.println(" 2 Paramt Child Constructor "+ x);
 		//super(y);    Error hai...ise yha baad me ni likh skte hain
 	}
 }
@@ -33,7 +33,7 @@ class GrandChild extends Child
 {
 	public GrandChild()
 	{
-		System.out.println("GrandChild constructor");	
+		System.out.println("GrandChild Constructor");	
 	}
 }
 public class bari_sir_constructor {
