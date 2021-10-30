@@ -1,0 +1,99 @@
+#include<iostream>>
+using namespace std;
+template<typename T>
+
+ class node{
+     public:
+  T data;
+ node <T> *next;
+
+   node(T data){
+    this ->data = data;
+    next = NULL;
+   }
+
+ };
+ template<typename T>
+ class queueusingLL{
+ node<T> * head;
+ node<T> * tail;
+ int size;
+  public:
+
+      queueusingLL()
+      {
+         head =NULL;
+         tail=NULL;
+         size =0;
+      }
+
+
+     int getsize(){
+      return size;
+     }
+     T front(){
+         if (isEmpty()){
+            return 0;
+         }
+     return head ->data;
+     }
+
+ bool isEmpty(){
+  return head == NULL;
+ }
+ void enqueue( T  element){
+     node <T> * newnode = new node<T>(element);
+     if (head ==NULL){
+    head =newnode ;
+    tail = newnode;
+    //size ++;
+}
+else{
+tail ->next = newnode ;
+tail= newnode;
+}
+size ++;
+
+ }
+  T dequeue(){
+      if (isEmpty()){
+        return 0;
+      }
+  node <T> *temp = head;
+  T ans = head->data;
+  head = head ->next;
+  delete temp;
+   size --;
+   return ans;
+
+  }
+
+
+ };
+
+  int main(){
+
+  queueusingLL<int>q;
+  q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+     q.enqueue(50);
+    q.enqueue(250);
+    q.enqueue(360);
+    q.enqueue(450);
+
+   cout<<q.front()<< endl;
+   cout<<q.getsize()<< endl;
+   cout<<q.dequeue()<< endl;
+ cout<<q.dequeue()<< endl;
+ cout<<q.dequeue()<< endl;
+ cout<<q.dequeue()<< endl;
+ cout<<q.dequeue()<< endl;
+  cout<<q.dequeue()<< endl;
+ cout<<q.dequeue()<< endl;
+   return 0;
+  }
+
+
+
